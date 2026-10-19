@@ -65,9 +65,9 @@ Because this is **bulk RNA-seq from whole tissue**, the analysis cannot distingu
 
 ## Selected figures
 
-[results/deseq/figuras/PCA_plot.png](Principal Component analysis)
+[Principal Component analysis](results/deseq/figuras/PCA_plot.png)
 
-[results/deseq/figuras/volcano_plot_E145_vs_E115.pngr](Differential expression: E14.5 vs. E11.5)
+[Differential expression: E14.5 vs. E11.5](results/deseq/figuras/volcano_plot_E145_vs_E115.png )
 
 Further results are available in [results/deseq](results/deseq/) and [results/anotacion](results/anotacion/), including Gene Ontology and GSEA analyses.
 
@@ -81,7 +81,7 @@ Further results are available in [results/deseq](results/deseq/) and [results/an
 
 [results/deseq](results/deseq/) — Differential-expression results and visualizations.
 
-[results/anotacion/`](results/anotacion/) — Functional enrichment and STRING outputs.
+[results/anotacion/](results/anotacion/) — Functional enrichment and STRING outputs.
 
 [docs/](docs/) — Coursework report and working documents.
 
