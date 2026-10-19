@@ -65,13 +65,9 @@ Because this is **bulk RNA-seq from whole tissue**, the analysis cannot distingu
 
 ## Selected figures
 
-**Principal component analysis**
+[results/deseq/figuras/PCA_plot.png](Principal Component analysis)
 
-[results/deseq/figuras/PCA_plot.png](results/deseq/figuras/PCA_plot.png)
-
-**Differential expression: E14.5 vs. E11.5**
-
-[results/deseq/figuras/volcano_plot_E145_vs_E115.pngr](results/deseq/figuras/volcano_plot_E145_vs_E115.png)
+[results/deseq/figuras/volcano_plot_E145_vs_E115.pngr](Differential expression: E14.5 vs. E11.5)
 
 Further results are available in [results/deseq](results/deseq/) and [results/anotacion](results/anotacion/), including Gene Ontology and GSEA analyses.
 
@@ -81,7 +77,7 @@ Further results are available in [results/deseq](results/deseq/) and [results/an
 
 [src/](src/) — Bash and R scripts for sequencing-data processing and analysis.
 
-[results/fastqc/] (results/fastqc/)— Quality-control figures.
+[results/fastqc/](results/fastqc/)— Quality-control figures.
 
 [results/deseq](results/deseq/) — Differential-expression results and visualizations.
 
