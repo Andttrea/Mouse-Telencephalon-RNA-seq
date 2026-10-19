@@ -3,7 +3,6 @@
 **Bulk RNA-seq analysis | Embryonic days E11.5 vs. E14.5 | *Mus musculus***
 
 **Author:** Andrea Villarruel García  
-**Affiliation:** B.Sc. in Genomic Sciences, Universidad Nacional Autónoma de México (UNAM)  
 **Context:** Final project for an undergraduate Transcriptomics course (2026)
 
 ## Overview
@@ -68,27 +67,27 @@ Because this is **bulk RNA-seq from whole tissue**, the analysis cannot distingu
 
 **Principal component analysis**
 
-`results/deseq/figuras/PCA_plot.png`
+[results/deseq/figuras/PCA_plot.png](results/deseq/figuras/PCA_plot.png)
 
 **Differential expression: E14.5 vs. E11.5**
 
-`results/deseq/figuras/volcano_plot_E145_vs_E115.png`
+[results/deseq/figuras/volcano_plot_E145_vs_E115.pngr](results/deseq/figuras/volcano_plot_E145_vs_E115.png)
 
-Further results are available in `results/deseq/` and `results/anotacion/`, including Gene Ontology and GSEA analyses.
+Further results are available in [results/deseq](results/deseq/) and [results/anotacion](results/anotacion/), including Gene Ontology and GSEA analyses.
 
 ## Repository organization
 
-`data/metadata/` — Sample information and accession tables.
+[data/metadata/](data/metadata/) — Sample information and accession tables.
 
-`src/` — Bash and R scripts for sequencing-data processing and analysis.
+[src/](src/) — Bash and R scripts for sequencing-data processing and analysis.
 
-`results/fastqc/` — Quality-control figures.
+[results/fastqc/] (results/fastqc/)— Quality-control figures.
 
-`results/deseq/` — Differential-expression results and visualizations.
+[results/deseq](results/deseq/) — Differential-expression results and visualizations.
 
-`results/anotacion/` — Functional enrichment and STRING outputs.
+[results/anotacion/`](results/anotacion/) — Functional enrichment and STRING outputs.
 
-`docs/` — Coursework report and working documents.
+[docs/](docs/) — Coursework report and working documents.
 
 ## Reproducibility and scope
 
