@@ -79,7 +79,7 @@ Further results are available in [results/deseq](results/deseq/) and [results/an
 
 [results/fastqc/](results/fastqc/)— Quality-control figures.
 
-[results/deseq](results/deseq/) — Differential-expression results and visualizations.
+[results/deseq/](results/deseq/) — Differential-expression results and visualizations.
 
 [results/anotacion/](results/anotacion/) — Functional enrichment and STRING outputs.
 
