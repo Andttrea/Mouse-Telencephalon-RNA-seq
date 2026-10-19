@@ -43,7 +43,6 @@ write.table(gse[ , c(1:10)], file ="/export/storage/users/andreavg/ProyectoFinal
 # NOTA: Seleccionamos los geneSetID c(1, 43, 392) porque, en conjunto, capturan la fisiopatología 
 # de la sarcopenia en la transición de 9 a 24 meses. Se eligieron estas 3 vías ortogonales para evitar redundancia:
 # - ID 1 (extracellular matrix organization): Indica el colapso del andamiaje e integridad estructural del tejido.
-# - ID 43 (muscle cell proliferation): Refleja la pérdida de la capacidad regenerativa de los mioblastos.
 # - ID 392 (response to hypoxia): Muestra la incapacidad del músculo viejo para adaptarse al estrés celular y metabólico.
 # Juntas, estas vías (con enriquecimiento negativo) cuentan la historia del declive funcional del músculo.
 
@@ -52,20 +51,11 @@ top_pathway_title <- gse$Description[1]
 p1 <- gseaplot2(gse, geneSetID = c("GO:0006260","GO:0099504", "GO:0016055"), title = "PATHWAYS UP-REGULATED Y DOWN-REGULATED", pvalue_table = TRUE)
 "GO:0099504"
 p1
-# Guardar el plot de GSEA en tu carpeta
-ggsave(
-  filename = file.path(output_dir, "GSEA.png"),
-  plot = p_hibrido,
-  width = 16,
-  height = 12,
-  dpi = 300,
-  bg = "white" 
-)
 
 # Generar el gráfico clásico para tu primera vía (ej. Replicación de ADN)
 p_clasico_1 <- gseaplot(
   gse, 
-  geneSetID = "GO:0060078", # Cambia por tu ID exacto
+  geneSetID = "GO:0060078", # Cambia por el ID exacto
   by = "all",               # Esto asegura que salgan los 3 paneles (curva, líneas, ranking)
   title = "DNA replication (E11.5)"
 )
@@ -89,3 +79,13 @@ p_hibrido <- gseaplot2(
 )
 
 print(p_hibrido)
+
+# Guardar el plot de GSEA 
+ggsave(
+  filename = file.path(output_dir, "GSEA.png"),
+  plot = p_hibrido,
+  width = 16,
+  height = 12,
+  dpi = 300,
+  bg = "white" 
+)
