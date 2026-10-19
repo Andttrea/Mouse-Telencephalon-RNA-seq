@@ -42,7 +42,7 @@ dds <- dds[keep,]
 
 # Visualizamos los datos con PCA
 vsd <- vst(dds)
-plotPCA(vsd, intgroup = c("age")) + aes(shape=sex) + theme_classic(base_size=18, base_line_size = 1)
+PCA_plot <- plotPCA(vsd, intgroup = c("age")) + aes(shape=sex) + theme_classic(base_size=18, base_line_size = 1)
 ggsave(paste0(fig_dir, "PCA_plot.png"), plot = PCA_plot, width = 12, height = 7)
 
 # Realizamos el análisis de DESeq2
