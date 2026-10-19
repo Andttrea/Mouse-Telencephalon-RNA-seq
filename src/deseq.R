@@ -126,6 +126,19 @@ significant_order <- significant[order(significant$padj), ]
 # Tomamos los 2000 genes más significativos
 top_genes <- head(rownames(significant_order), n = 2000)
 
+# --------------------------------------------------- Para calcular TPM -----------------------------------------------------------------#
+
+annotation <- read.delim("/export/storage/users/andreavg/ProyectoFinal_transcriptomica/results/star/featurecounts/lenght_table.tsv", row.names = 1)
+# Calculamos TPM  para el background de genes y guardamos la tabla de TPM log2 transformada
+mcols(dds)$basepairs = annotation[rownames(dds),]
+log2_fpkm = log2(fpkm(dds)+0.1) 
+fpkm2tpm_log2 <- function(fpkm) { fpkm - log2(sum(2^fpkm)) + log2(1e6) } 
+log2_tpm = apply(log2_fpkm, 2, fpkm2tpm_log2) 
+gene_names = gene_name_map[rownames(log2_tpm),]
+write.table(cbind(gene_names, log2_tpm), paste0(out_dir, "TPM_log2-table.txt"), sep="\t", quote=FALSE)
+
+# --------------------------------------------------- Para calcular TPM -----------------------------------------------------------------#
+
 zscore_t <-  t(scale(t(log2_tpm[top_genes,]))) 
 
 # Ordenamos columnas por edad y luego por sexo
@@ -276,18 +289,6 @@ draw(heatmap_top20)
 dev.off()
 
 
-# --------------------------------------------------- Para calcular TPM -----------------------------------------------------------------#
-
-annotation <- read.delim("/export/storage/users/andreavg/ProyectoFinal_transcriptomica/results/star/featurecounts/lenght_table.tsv", row.names = 1)
-# Calculamos TPM  para el background de genes y guardamos la tabla de TPM log2 transformada
-mcols(dds)$basepairs = annotation[rownames(dds),]
-log2_fpkm = log2(fpkm(dds)+0.1) 
-fpkm2tpm_log2 <- function(fpkm) { fpkm - log2(sum(2^fpkm)) + log2(1e6) } 
-log2_tpm = apply(log2_fpkm, 2, fpkm2tpm_log2) 
-gene_names = gene_name_map[rownames(log2_tpm),]
-write.table(cbind(gene_names, log2_tpm), paste0(out_dir, "TPM_log2-table.txt"), sep="\t", quote=FALSE)
-
-# --------------------------------------------------- Para calcular TPM -----------------------------------------------------------------#
 
 saveRDS(res, file = "/export/storage/users/andreavg/ProyectoFinal_transcriptomica/results/deseq/res.rds")
 
